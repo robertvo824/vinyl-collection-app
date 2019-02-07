@@ -1,0 +1,32 @@
+<% include partials/header %>
+<div class="container">
+
+    <div class="row">
+        <h1 style="text-align: center;">Edit <%= vinyl.album %></h1>
+
+        <div style="width: 30%; margin: 25px auto;">
+        <form action="/vinyls/<%= vinyl.id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label>Artist</label>
+                <input class="form-control" type="text" name="vinyl[artist]" value="<%= vinyl.artist %>">
+            </div>
+            <div class="form-group">
+                <label>Album</label>
+                <input class="form-control" type="text" name="vinyl[album]" value="<%= vinyl.album %>">
+            </div>
+            <div class="form-group">
+                <label>Image</label>
+                <input class="form-control" type="text" name="vinyl[image]" value="<%= vinyl.image %>">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" name="vinyl[description]"><%= vinyl.description %></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Update!</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<% include partials/footer %>

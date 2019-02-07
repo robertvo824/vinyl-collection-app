@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome To My Vinyl Collection!</h1>
+            <p>View my assorted collection</p>
+            <a class="btn btn-primary btn-lg" href="/vinyls/new">Add New Vinyl</a>
+        </div>
+    </header>
+
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <% vinyls.forEach((vinyl) => { %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= vinyl.image %>">
+                <div class="caption">
+                    <h4>Artist: <%= vinyl.artist %></h4>
+                    <h4>Album: <%= vinyl.album %></h4>
+                </div>
+                <p>
+                    <a class="btn btn-primary" href="/vinyls/<%= vinyl._id %>">More Info</a>
+                </p>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+<a href="/">Go Back To Landing Page!</a>
+
+<% include partials/footer %>
